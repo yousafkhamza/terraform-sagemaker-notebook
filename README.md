@@ -30,19 +30,24 @@ chmod +x terraform.sh
 ./ terraform.sh
 ```
 - I just used the same with IAM role attached EC2 instance as a infrastrucuture deployment machine. Therfore, if you're using your local machine please create a IAM user and configure the same in "_provider.tf_".
-> Using with IAM role instance
+> Using with IAM role instance be like
 ```
 provider "aws" {
   region = var.region
 }
 ```
-> LocalMachine
+> LocalMachine be like
 ```
 provider "aws" {
   region     = var.region
   access_key = var.access_key            <----------- Please create the same in variable.tf and mention the key in terraform.tfvars
   secret_key = var.secret_key            <----------- Please create the same in variable.tf and mention the key in terraform.tfvars
 }
+```
+
+> Please reconfigure the file when after your cloned this repository. then you may use the below command for terraform initlisation
+```
+terraform init
 ```
 
 ---
