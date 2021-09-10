@@ -59,6 +59,23 @@ cd terraform-sagemaker-notebook
 ```
 
 ---
+## Changable variables
+_terraform.tfvars (Do you need to change any size or name please be change under the values)_
+```
+region = "ap-south-1"                    <---------------- Please enter your region as you wish
+instance_type = "ml.t2.medium"           <---------------- Please enter your instance type as you wish
+notebook_name = "my-notebook"            <---------------- Please enter your notebook name as you wish
+volume_size = "6"                        <---------------- Please enter your instance volume size as you wish.
+```
+_vpc.tf (Do you want swiich your custome VPC ID please be change the values under this file)_
+```
+data "aws_vpc" "default" {
+    default = true
+#   id = "vpc-04218dfaf2b5c7216"         <--------------- Please comment the above default and uncomment this line and change your vpc id as you wish.
+} 
+```
+
+---
 ## Execution
 _Exicute the terraform code on your machine with terraform and aws integrated. if you're not configured the same please check the pre-request section and configure the same then please follow the below_
 ```
